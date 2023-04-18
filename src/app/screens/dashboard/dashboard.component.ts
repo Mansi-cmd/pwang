@@ -19,7 +19,7 @@ export class DashboardComponent {
 
   onSubmit() {
     this.submit = true;
-    if(this.form.invalid) {
+    if(this.form.valid) {
       return
     }
 

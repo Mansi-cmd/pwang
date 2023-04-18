@@ -19,7 +19,7 @@ export class RegisterComponent {
 
   onSubmit() {
     this.isSubmit = true;
-    if(this.form.valid) {
+    if(this.form.invalid) {
       return
     }
 
