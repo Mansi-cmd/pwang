@@ -3,17 +3,23 @@
         <div class="col-lg-6 offset-lg-3">
 
             <h3>Login Form</h3>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example1">Email address</label>
-                  <input type="email" id="form2Example1" class="form-control" />
+                  <input type="email" formControlName="email" id="form2Example1" class="form-control" />
+                  <span class="invalid-input" *ngIf="(isSubmit || email.touched) && email.invalid">
+                    Enter Valid Email
+                </span>
                 </div>
               
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example2">Password</label>
-                  <input type="password" id="form2Example2" class="form-control" />
+                  <input type="password" formControlName="password" id="form2Example2" class="form-control" />
+                  <span class="invalid-input" *ngIf="(isSubmit || password.touched) && password.invalid">
+                    Password is required
+                </span>
                 </div>
               
                 <!-- 2 column grid layout for inline styling -->
