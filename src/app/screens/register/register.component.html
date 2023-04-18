@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+
+            <h3>Register Form</h3>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example3">Name</label>
+                    <input formControlName="name" type="text" id="form2Example3" class="form-control" />
+                    <span class="invalid-input" *ngIf="(isSubmit || name.touched) && name.invalid">
+                        This Field is required
+                    </span>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input formControlName="email" type="email" id="form2Example1" class="form-control" />
+                    <span class="invalid-input" *ngIf="(isSubmit || email.touched) && email.invalid">
+                        Enter Valid Email
+                    </span>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="password" formControlName="password" id="form2Example2" class="form-control" />
+                    <span class="invalid-input" *ngIf="(isSubmit || password.touched) && password.invalid">
+                        Password is required
+                    </span>
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>Already have account? <a routerLink="/login">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
