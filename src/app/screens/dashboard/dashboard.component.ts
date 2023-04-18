@@ -13,12 +13,12 @@ export class DashboardComponent {
     education:['',[Validators.required,Validators.pattern('[A-Za-z]*$')]]
   });
 
-  Submit = false;
+  submit = false;
   constructor(
     private fb: UntypedFormBuilder){}
 
   onSubmit() {
-    this.Submit = true;
+    this.submit = true;
     if(this.form.invalid) {
       return
     }
